@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang= "en">
+	<head>
+        <title>Riley Newsome</title>
+		<style>
+			body {
+                background-color:burlywood;
+            }
+            h1 {
+                font-family: sans-serif;
+            }
+            a {
+                font-family: serif;
+            }
+			#Title {
+				font-family: sans-serif;
+			}
+            article {
+                margin-right: 50%;
+            }
+            p {
+                font-weight: bold;
+            }
+            span {
+                font-weight: normal;
+            }
+		</style>
+        
+	</head>
+    <body>
+        <h1>
+            <a id="Title" href="index.html"> Riley Newsome's Blog</a> <br><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/JMU_ISAT-CS_Building.jpg" alt="JMU Building" width="200" height="100"> <br>  Blog Post 1 - 9/2/21 
+        </h1>
+        <article>
+            According to <a href="https://transparencyreport.google.com/https/overview?hl=en"> Google's transparency report</a>, 96% of pages loaded on Chrome in the United States are using HTTPS.
+            <br>
+            <a href="https://ibb.co/Df3xHLr"><img src="https://i.ibb.co/PGB7vtD/Screen-Shot-2021-09-09-at-5-16-24-PM.png" alt="Screen-Shot-2021-09-09-at-5-16-24-PM" border="0"></a> <br>
+            This is an incredible statistic. Earlier in the decade, it was not as commonplace to have non financial sites using encryption. I would personally attribute a huge help of this adoption rate to <a href="letsencrypt.org">Let's Encrypt</a>
+            which is a non-profit who provides free TLS certificates to any site who needs one. Using encryption on your site can improve it in the following ways:
+            <ul>
+                <li>Provides integrity. No one else can intercept what your site is sending to your users and modifying it.</li>
+                <li>Prevents other people/providers from reading the communications between your site and your users which adds privacy.</li>
+            </ul>
+            <br>
+            Adding a TLS certificate to your website is easy thanks to Let's Encrypt.
+            <a href="https://ibb.co/G56zBf9"><img src="https://i.ibb.co/ZMjqtRS/Screen-Shot-2021-09-09-at-5-19-47-PM.png" alt="Screen-Shot-2021-09-09-at-5-19-47-PM" border="0"></a><br>
+            Certbot is a tool created by the <a href="eff.org">EFF</a> and it automates the process of installing the TLS certificate. It also automates the renewal process once the current certificate
+            expires after 3 months. Once you SSH into your server, you can easily install the certificate by typing the following commands: <br>
+            <p>
+            sudo snap install core; sudo snap refresh core<br>
+            sudo snap install --classic certbot<br>
+            sudo ln -s /snap/bin/certbot /usr/bin/certbot<br>
+            <span>And assuming you are using Apache (which you are if you are in this class) then you just use this and it'll automatically change your apache configuration:</span><br>
+            sudo certbot --apache<br>
+            sudo certbot renew --dry-run<span> (This tests to make sure the auto renewal works correctly.)</span><br>
+            </p>
+            And now your site should be visible over a https connection. Try it!
+            </article>
+    </body>
+</html>
