@@ -47,7 +47,12 @@
                         <li>All the fonts are free and you don't have to worry about having a license to use them.</li>
                         <li>You don't have to worry about maintainability. Google will handle that all for you.</li>
                     </ul>
-                    W
+                    When you use external fonts, such as Google Fonts, the font is automatically downloaded from their servers and used on the text. Most users won't even know the different between regular fonts that are served from your server.
+                    If you want to have a special font on your site you can go to <a href="https://fonts.google.com">fonts.google.com</a> and go through the large selection that they have. When you find one that you like, you can click on the box 
+                    that says "select this style". After doing so, you will see code that you have to put in your internal/external CSS style sheet. It should look like this:<br><span style="font-weight: bold;"><br> @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');</span>
+                    <br><br>
+                    Then it also gives you the specific CSS rule "font-family" which will actually use that font where you want it to be done.
+                    That will look like this:<br><br><span style="font-weight:bold">font-family: 'Roboto', sans-serif;</span>
                 </span>
             </p>
             </article>
